@@ -12,6 +12,20 @@ The workshop uses a customer support ticket dataset to build a simple text class
 - `requirements.txt` - Python dependencies.
 - `setup_env.ps1` - PowerShell setup script that creates the virtual environment and registers the Jupyter kernel.
 
+## Dataset Source
+
+The support ticket dataset used in this workshop is a local copy of this Hugging Face dataset file:
+
+[Tobi-Bueck/customer-support-tickets: aa_dataset-tickets-multi-lang-5-2-50-version.csv](https://huggingface.co/datasets/Tobi-Bueck/customer-support-tickets/blob/main/aa_dataset-tickets-multi-lang-5-2-50-version.csv)
+
+The local project copy is stored at:
+
+```text
+data/support_tickets.csv
+```
+
+The notebook filters this dataset to English-language rows and uses `queue` as the prediction target.
+
 ## Setup: PowerShell
 
 From the project root, run:

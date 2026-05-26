@@ -6,3 +6,5 @@ __pycache__/
 .virtual_documents/
 anaconda_projects/
 Untitled*.ipynb
+data/openlogo.tar
+data/openlogo/
