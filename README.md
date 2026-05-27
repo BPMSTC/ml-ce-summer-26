@@ -8,7 +8,9 @@ The workshop uses a customer support ticket dataset to build a simple text class
 
 - `data/support_tickets.csv` - local copy of the support ticket dataset.
 - `notebooks/ml_workshop_support_ticket_classification.ipynb` - fully worked Jupyter notebook for the live workshop.
+- `notebooks/supervised_unsupervised_iris_demo.ipynb` - short teaching demo that contrasts supervised classification with unsupervised clustering.
 - `scripts/support_ticket_classifier.py` - plain Python version of the notebook workflow.
+- `scripts/supervised_unsupervised_iris_demo.py` - plain Python version of the supervised vs. unsupervised Iris demo.
 - `requirements.txt` - Python dependencies.
 - `setup_env.ps1` - PowerShell setup script that creates the virtual environment and registers the Jupyter kernel.
 
@@ -61,6 +63,12 @@ Open:
 notebooks/ml_workshop_support_ticket_classification.ipynb
 ```
 
+For the short supervised vs. unsupervised learning demo, open:
+
+```text
+notebooks/supervised_unsupervised_iris_demo.ipynb
+```
+
 Select this kernel if it is not already selected:
 
 ```text
@@ -83,7 +91,7 @@ For this workshop, `venv` is simpler because the dependencies are standard Pytho
 
 ## Workshop Flow
 
-The notebook walks through:
+The main support-ticket notebook walks through:
 
 1. Loading the dataset.
 2. Filtering to English-language tickets.
@@ -97,13 +105,49 @@ The notebook walks through:
 10. Trying custom ticket examples.
 11. Discussing responsible use and production considerations.
 
+## Short Demo: Supervised vs. Unsupervised Learning
+
+Before the main support-ticket classifier, use this shorter notebook:
+
+```text
+notebooks/supervised_unsupervised_iris_demo.ipynb
+```
+
+It uses the built-in Iris flower dataset from scikit-learn to compare two learning styles:
+
+- **Supervised learning:** a Logistic Regression classifier learns from flower measurements with known species labels.
+- **Unsupervised learning:** a KMeans clustering model uses the same measurements but does not receive the species labels during training.
+
+The demo is intentionally small and heavily explained. It walks through:
+
+1. The difference between input features `X` and answer labels `y`.
+2. Why supervised learning trains with an answer key.
+3. How a train/test split helps evaluate predictions on unseen examples.
+4. How to read accuracy, precision, recall, F1 score, and a confusion matrix.
+5. Why unsupervised learning trains without labels.
+6. How KMeans clustering discovers groups from measurements.
+7. Why cluster numbers are not the same thing as class labels.
+8. How cluster results can be compared to known labels after the fact for teaching purposes.
+
+The purpose is to make the conceptual difference clear before learners move into the more realistic support-ticket classification workflow.
+
 ## Run the Script Version
 
-The notebook is the main workshop artifact. The script version is included as a compact reference:
+The notebooks are the main workshop artifacts. Script versions are included as compact references.
+
+Run the support-ticket classifier script:
 
 ```powershell
 .\.venv\Scripts\python scripts\support_ticket_classifier.py
 ```
+
+Run the supervised vs. unsupervised Iris demo script:
+
+```powershell
+.\.venv\Scripts\python scripts\supervised_unsupervised_iris_demo.py
+```
+
+The Iris script saves two generated figures under `outputs/`, which is ignored by Git.
 
 ## Notes
 
